@@ -74,32 +74,17 @@ public class MainActivity extends AppCompatActivity {
         mWebview.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
         mWebview.getSettings().setDisplayZoomControls(false);
         final Activity activity = this;
-        mWebview.setWebViewClient(new WebViewClient() {
-            @SuppressWarnings("deprecation")
-            @Override
-            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-                Toast.makeText(activity, description, Toast.LENGTH_SHORT).show();
-            }
-
-            @TargetApi(android.os.Build.VERSION_CODES.M)
-            @Override
-            public void onReceivedError(WebView view, WebResourceRequest req, WebResourceError rerr) {
-                // Redirect to deprecated method, so you can use it in all SDK versions
-                onReceivedError(view, rerr.getErrorCode(), rerr.getDescription().toString(), req.getUrl().toString());
-            }
-
-        });
+        mWebview.setWebViewClient(new WebViewClient());
 
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // TODO Auto-generated method stub
-                //Toast.makeText(getApplicationContext(),"Place Your First Option Code",Toast.LENGTH_SHORT).show();
 
                 mWebview.loadUrl(urls[position]);
                 setContentView(mWebview);
+                Toast.makeText(activity, "Welcome to Luen News", Toast.LENGTH_LONG).show();
             }
         });
     }
