@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             "Bao tuoi tre Page",
     };
     String[] urls = {
-            "https://raw.githack.com/luen2003/CSSWebsite/master/index.htm",
+            "https://luen2003.github.io/",
             "https://vnexpress.net/",
             "https://vietnamnet.vn/",
             "https://baomoi.com/",
